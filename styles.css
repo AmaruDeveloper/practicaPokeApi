@@ -1,0 +1,160 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #5D6D7E;
+}
+
+.contenedor{
+    display: grid;
+    max-height: 950px;
+    width: 100%;
+    justify-content: center;
+    place-items: center;
+    color: #E5E7E9;
+}
+
+h1{
+    margin: 10px;
+}
+
+.contenedorTitulo{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    text-align: center;
+    max-width: 95%;
+    cursor: pointer;
+}
+
+#contenedorLista{
+    display: grid;
+    width: auto;
+    margin: 10px 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: all 0.5s linear;
+}
+
+.contenedorLista2{
+    position: absolute;
+    width: 10%;
+    background: #17202A;
+    color: #EAF2F8;
+    transform: translateX(-165px);
+    transition: all 300ms ease-in-out;
+    max-height: 100%;
+    cursor: pointer;
+    overflow-y: auto;
+}
+
+
+#contenedorLista2:hover{
+    transform: translateX(0px);
+}
+
+.visible{
+    transform: translateX(0px);
+}
+
+#contenedorLista2 ul li{
+    font-size: 1.1rem;
+    height: auto;
+    text-transform: capitalize;
+    border: 2px solid rgba(0, 0, 0, 0.0);
+    transition: all .5ms ease-in-out;
+}
+
+#contenedorLista2 ul li:hover{
+    color: white;
+    border: solid 2px rgba(255, 255, 255, 1);
+
+}
+
+.contenedorTitulo:hover > #contenedorLista{
+    max-height: 100%;
+}
+
+#contenedorLista ul{
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#contenedorLista ul:hover{
+    height: auto; /* Altura automática en el hover */
+}
+
+#contenedorLista ul li{
+    font-size: 1.2rem;
+    width: 10%;
+    height: auto;
+    text-transform: capitalize;
+    border: 2px solid rgba(0, 0, 0, 0.0);
+    transition: all .5ms ease-in-out;
+}
+
+#contenedorLista ul li:hover{
+    border: solid 2px rgba(255, 255, 255, 1);
+
+}
+
+#resultados{
+    text-transform: capitalize;
+    background: #34495E;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    place-items: center;
+    /*display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;*/
+    width: 50vw;
+    margin: 25px auto;
+    color: white;
+    border-radius: 9px;
+    font-size: 1.4rem;
+}
+
+#resultados img{
+    width: 45%;
+}
+
+@media (max-width: 450px){
+
+    .tituloLista{
+        text-align: center;
+    }
+    #resultados{
+        font-size: 1rem;
+    }
+
+    .contenedorLista2{
+        font-size: .8rem;
+        width: 25%;
+    }
+
+    #contenedorLista2 ul li{
+        font-size: .9rem;
+        font-weight: bold;
+    }
+}
+/*si le agregamos el infinite después del linear, girará para siempre*/
+.rotating {
+    animation: rotate 1s linear;
+}
+  
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
